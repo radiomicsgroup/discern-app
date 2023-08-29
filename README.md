@@ -11,7 +11,7 @@ The app uses a pretrained CNN classifier scheme for voxel-wise classification of
 This is the code repository of the brain tumour classification pipeline described in the work [*An accessible deep learning tool for voxel-wise classification of brain malignancies from perfusion MRI*](https://doi.org/10.21203/rs.3.rs-2362207/v1) (preprint) by Raquel Perez-Lopez and colleagues from the Vall d'Hebron Institute of Oncology (VHIO), Barcelona, Spain.
 
 
-The app is running in our servers and can be tried on this [link.](http://84.88.64.102:5000/discern-app)
+The app will be running in our servers on [link.](http://84.88.64.102:5000/discern-app)
 
 
 Visit us [here.](https://radiomicsgroup.github.io/)
@@ -41,7 +41,7 @@ Visit us [here.](https://radiomicsgroup.github.io/)
 ## Installation
 Download or clone the app repo in a directory, this will create the folder /discern-app:
 
-`git clone https://github.com/radiomicsvhio/discern-app`
+`git clone https://github.com/radiomicsgroup/discern-app`
 
 Though not necessary, you may create a new python/conda environment:
 
@@ -81,13 +81,13 @@ See all the options in the docstring help of `run.py`.
 - Preprint:
 >Raquel Perez-Lopez et al., [*An accessible deep learning tool for voxel-wise classification of brain malignancies from perfusion MRI*](https://doi.org/10.21203/rs.3.rs-2362207/v1), DOI: 10.21203/rs.3.rs-2362207/v1
 - Github:
->[github.com/radiomicsvhio/discern-app](https://github.com/radiomicsvhio/discern-app)
+>[github.com/radiomicsgroup/discern-app](https://github.com/radiomicsgroup/discern-app)
 
 ## License
 Please, see `license.txt`
 
 ## Terms of use
-1.	The use of any software provided by VHIO as part of its services, from now on referred to as the services, is subject to the terms and conditions of the third party license agreements applicable to the relevant software as made available through the website [https://github.com/radiomicsvhio/discern-app].
+1.	The use of any software provided by VHIO as part of its services, from now on referred to as the services, is subject to the terms and conditions of the third party license agreements applicable to the relevant software as made available through the website [https://github.com/radiomicsgroup/discern-app].
 2.	The services shall be used solely for research activities that comply with all applicable laws and regulations.
 3.	Users shall keep all user IDs, passwords and other means of access to the services account within its possession or control and shall keep those confidential and secure from unauthorised access or use.
 4.	If user becomes aware of any unauthorized use of a password or the services account, user will notify the VHIO team as promptly as possible through the provided channels.
