@@ -1,7 +1,3 @@
-<p align="center">
-  <img src="https://raw.githubusercontent.com/radiomicsgroup/discern-app/main/doc/img/logo.png" width="50%" alt='discern-app'>
-</p>
-
 # DISCERN: Diagnosis In Susceptibility Contrast Enhancing Regions for Neuroncology
 
 The app uses a pretrained CNN classifier scheme for voxel-wise classification of enhancing brain tumours into P-CNS-lymphoma, glioblastoma or brain metastasis, from dynamic susceptibility contrast (DSC) MRI data.
