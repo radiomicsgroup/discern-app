@@ -32,14 +32,14 @@ Visit us [here.](https://radiomicsgroup.github.io/)
 - [dcm2niix](https://github.com/rordenlab/dcm2niix)
 
 ### NOTE
-- If used without graphical interface in Linux systems, xvfb-run is needed (`apt-get install xvfb-run`)
+- If used without graphical interface in a Linux system, xvfb-run is needed (`sudo apt install xvfb`)
 
 ## Installation
-Download or clone the app repo in a directory, this will create the folder /discern-app:
+Download or clone this repository as follows, and navigate into the new folder /discern-app:
 
 `git clone https://github.com/radiomicsgroup/discern-app`
 
-Though not necessary, you may create a new python/conda environment:
+You may create a new Python environment, we will use anaconda/miniconda:
 
 `conda create --name myenv python=3.8`
 
@@ -55,23 +55,23 @@ Optionally:
 
 `pip install gdcm==2.8.9`
 
-Download Slicer from above links into, e.g. /slicer
+Download Slicer from above links and unpack/install in /discern-app/programs
 
-Download dcm2niix from above links into, e.g. /dcm2niix
+Download dcm2niix from above links and unpack/install in /discern-app/programs
 
-In `settings.py`, place the path of the Slicer executable as: `SLICER_EXEC="/slicer/Slicer"`
+In `settings.py`, place the path of Slicer like: `SLICER_ROOT="/discern-app/programs/Slicer-4.8.1-linux-amd64"`
 
-In `settings.py`, place the path of the dcm2niix executable as: `DCM2NIIX="/dcm2niix/dcm2niix"`
+In `settings.py`, place the path of dcm2niix executable like: `DCM2NIIX="/discern-app/programs/dcm2niix/dcm2niix"`
 
 ## Usage
-To run the pipeline, call the `run.py` file (full path `python /discern-app/run.py`):
+To run the pipeline, call `python run.py`:
 
 `python run.py --p_dsc /path_to_DSC_image --p_t1 /path_to_T1_image --p_output /desired_output_path`
 
 Input DSC and T1wCE volumes may be in DICOM, Nifti or NRRD formats.
 Segmentation mask files can be provided instead of the T1 volume.
 
-See all the options in the docstring help of `run.py`.
+See all the options in the docstring help with `python run.py --help`.
 
 ## Referencing
 - Preprint:
