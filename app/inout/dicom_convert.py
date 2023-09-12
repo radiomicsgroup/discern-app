@@ -55,7 +55,7 @@ def DICOM2nii(inputpath, outputpath, outfilename=[], dcm2niix_exe=[]):
         outfilename = os.path.basename(inputpath)
     if not os.path.exists(outputpath): os.makedirs(outputpath)
     dir_io = ' '.join([wrap_string(outputpath,'"'), wrap_string(inputpath,'"')])
-    params_str = ' '.join(['-p', 'n', '-e', 'n', '-w', '1', '--terse', '-f', wrap_string(outfilename,'"'), '-o'])
+    params_str = ' '.join(['-p', 'n', '-e', 'n', '-w', '1', '-m', 'y', '--terse', '-f', wrap_string(outfilename,'"'), '-o'])
     call_str = " ".join([dcm2niix_exe, params_str, dir_io])
     logger.debug('Calling dcm2niix: %s', call_str)
     exitcode, out, err = get_exitcode_stdout_stderr(call_str)
@@ -92,7 +92,7 @@ def json2dict(p_json):
 def convert2nrrd(inputpath, outputpath, isUInt, jsoninfo=None):
     logger.info('sitk nii to nrrd conversion')
     im = read_image_sitk(inputpath, isUInt)
-    if any(['Multivolume' for k in im.GetMetaDataKeys()]):
+    if any([True for k in im.GetMetaDataKeys() if 'Multivolume' in k]):
         logger.info('Slicer multivolume detected - skipping compatibility changes')
         return inputpath
     if im.GetDimension()==4:
