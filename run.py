@@ -37,7 +37,7 @@ import logging
 import os
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'
 
-APPVERSION = '1.0.6'
+APPVERSION = '1.0.7'
 
 
 def main(p_dsc, p_t1, p_output, p_model1, p_model2, threshold_lym, threshold_met, p_lesion0, p_wm0, rerunMask, noReg, noMoCo, noStrip, logfile=None):
