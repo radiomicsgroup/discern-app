@@ -1,16 +1,14 @@
 # DISCERN: Diagnosis In Susceptibility Contrast Enhancing Regions for Neuroncology
 
-The app uses a pretrained CNN classifier scheme for voxel-wise classification of enhancing brain tumours into P-CNS-lymphoma, glioblastoma or brain metastasis, from dynamic susceptibility contrast (DSC) MRI data.
+This is the code repository of the brain tumour classification pipeline described in the work [*An accessible deep learning tool for voxel-wise classification of brain malignancies from perfusion MRI*](https://doi.org/10.21203/rs.3.rs-2362207/v1) (preprint) by Raquel Perez-Lopez and colleagues from the Vall d'Hebron Institute of Oncology (VHIO), Barcelona, Spain.
+
+**Try it [HERE!](http://84.88.64.102:5000/discern-app)**
 
 ![Probability maps](doc/img/probmaps.png)
 
-This is the code repository of the brain tumour classification pipeline described in the work [*An accessible deep learning tool for voxel-wise classification of brain malignancies from perfusion MRI*](https://doi.org/10.21203/rs.3.rs-2362207/v1) (preprint) by Raquel Perez-Lopez and colleagues from the Vall d'Hebron Institute of Oncology (VHIO), Barcelona, Spain.
+The app uses a pretrained CNN classifier scheme for voxel-wise classification of enhancing brain tumours into P-CNS-lymphoma, glioblastoma or brain metastasis, from dynamic susceptibility contrast (DSC) MRI data.
 
-
-The app will be running in our servers on [link.](http://84.88.64.102:5000/discern-app)
-
-
-Visit us [here.](https://radiomicsgroup.github.io/)
+To know more about our group, visit us at [https://radiomicsgroup.github.io](https://radiomicsgroup.github.io/)
 
 ## Requirements
 ### Python
@@ -32,7 +30,7 @@ Visit us [here.](https://radiomicsgroup.github.io/)
 - [dcm2niix](https://github.com/rordenlab/dcm2niix)
 
 ### NOTE
-- If used without graphical interface in a Linux system, xvfb-run is needed (`sudo apt install xvfb`)
+- If used from command line (without graphical interface) in a Linux system, xvfb-run is needed (`sudo apt install xvfb`)
 
 ## Installation
 Download or clone this repository as follows, and navigate into the new folder /discern-app:
