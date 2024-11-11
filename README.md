@@ -2,7 +2,7 @@
 
 This is the code repository of the brain tumour classification pipeline described in the work [*An accessible deep learning tool for voxel-wise classification of brain malignancies from perfusion MRI*](https://doi.org/10.21203/rs.3.rs-2362207/v1) (preprint) by Raquel Perez-Lopez and colleagues from the Vall d'Hebron Institute of Oncology (VHIO), Barcelona, Spain.
 
-**Contact us and try it [HERE!](http://84.88.64.102:5000/discern-app)**
+**Contact us and try it [HERE!](http://195.77.67.202:5000/discern-app)**
 
 ![Probability maps](doc/img/probmaps.png)
 
