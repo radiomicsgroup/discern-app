@@ -115,6 +115,7 @@ def correct_T1(input_path, output_path, slicer_exe):
     all_io = ' '.join(files_io)
     params_str = '--meshresolution 1,1,1 --splinedistance 0 --bffwhm 0 --iterations 50,40,30 --convergencethreshold 0.0001 --bsplineorder 3 --shrinkfactor 4 --wienerfilternoise 0 --nhistogrambins 0'
     call_str = " ".join([cli_exe, params_str, all_io])
+    logger.debug('Calling Slicer: %s', call_str)
     exitcode, out, err = get_exitcode_stdout_stderr(call_str)
     if exitcode:
         logger.error('N4 bias correction terminated with error code: %s', err.decode())

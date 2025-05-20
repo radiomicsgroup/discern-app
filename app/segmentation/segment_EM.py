@@ -8,6 +8,7 @@ import os
 import time
 from app.utils import get_exitcode_stdout_stderr, end_execution, wrap_string
 import logging
+import platform
 logger = logging.getLogger(__name__)
 
 
@@ -18,7 +19,10 @@ def EMsegment(im_t1_path, output_path, slicer_exe, emsegcli, mrml):
     if not os.path.isdir(outfolder): os.makedirs(outfolder, exist_ok=True)
     
     logger.info('Segmenting hemispheres')
-    cli_exe = 'xvfb-run -a ' + slicer_exe + ' --launch ' + emsegcli
+    if 'Windows' in platform.uname().system:
+        cli_exe = slicer_exe + ' --launch ' + emsegcli
+    else:
+        cli_exe = 'xvfb-run -a ' + slicer_exe + ' --launch ' + emsegcli
     param_io = ['--mrmlSceneFileName','--resultVolumeFileName','--targetVolumeFileNames']
     
     files_io = [mrml, os.path.join(outfolder,'HEMS-label.nrrd'), im_t1_path]
