@@ -67,6 +67,7 @@ def arr_image_sitk(image):
     return arr
 
 def dsc_multivolume(p_dsc, output):
+    nrrd.SPACE_DIRECTIONS_TYPE = 'double vector list' # since pynrrd v1.1.1, see https://github.com/mhe/pynrrd/issues/162
     logger.debug('Converting DSC to multivolume')
     imdsc, hdsc = nrrd.read(p_dsc)
     if 'space dimension' in hdsc.keys():
@@ -77,7 +78,7 @@ def dsc_multivolume(p_dsc, output):
         hdsc['kinds'][0] = 'list'
     if len(hdsc['space origin'])>3:
         imdsc = imdsc.transpose(3,0,1,2)
-        hdsc['space directions'] = [None]+[hdsc['space directions'][i][:-1] for i in range(3)]
+        hdsc['space directions'] = [[None, None]]+[hdsc['space directions'][i][:-1] for i in range(3)]
         hdsc['space origin'] = hdsc['space origin'][:-1]
     else:
         logger.debug('DSC volume seems already in multivolume format')

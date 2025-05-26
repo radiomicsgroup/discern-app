@@ -45,7 +45,7 @@ def get_dsc_snaps(im_perf,h_perf):
     h_frame = {
         'space': 'left-posterior-superior',
         'kinds': ['domain', 'domain', 'domain'],
-        'space directions': h_perf['space directions'][1:,:],
+        'space directions': h_perf['space directions'][1:],
         'space origin': h_perf['space origin']
         }
     return im_perf[0,:,:,:], im_perf[ttp,:,:,:], h_frame
