@@ -46,21 +46,21 @@ def opening_2D(mask,se):
     return out
 
 def closing_and_fill_2D(mask):
-    se = morphology.square(4)
+    se = morphology.footprint_rectangle((4,4))
     mask = dilation_2D(mask,se)
     mask = fill_holes_2D(mask)
     mask = erosion_2D(mask,se)
     return mask
 
 def closing_and_fill(mask):
-    se = morphology.cube(6)
+    se = morphology.footprint_rectangle((6,6,6))
     mask = binary_dilation(mask,se,iterations=1)
     mask = fill_holes_2D(mask)
     mask = binary_erosion(mask,se,iterations=1)
     return mask
 
 def closing_hull_2D(mask):
-    mask = morphology.binary_closing(mask,morphology.cube(4))
+    mask = morphology.binary_closing(mask,morphology.footprint_rectangle((4,4,4)))
     out = np.zeros(mask.shape)
     for z in range(mask.shape[2]):
         out[:,:,z] = morphology.convex_hull_image(mask[:,:,z])

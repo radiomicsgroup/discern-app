@@ -22,7 +22,7 @@ def sk_strip_perf(imp,noStrip):
     else:
         se2 = np.zeros((9,9,9))
         se2[:,:,4] = 1
-        se = morphology.cube(5)
+        se = morphology.footprint_rectangle((5,5,5))
         mask_per = morphology.binary_erosion(maskp, se)
         p_size = sum(sum(sum(mask_per)))
         mask_pcl = morphology.remove_small_objects(mask_per,p_size/2,1)

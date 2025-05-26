@@ -38,7 +38,7 @@ def segment(im_t1_path, im_brain_mask, p_hems, output_path=[]):
     mask_brain = np.bitwise_and(mask_brain==1, mask_hems>0)
     
     imt1sk = imt1.copy()
-    imt1sk = imt1sk*(erosion_2D(mask_brain, morphology.square(4)))
+    imt1sk = imt1sk*(erosion_2D(mask_brain, morphology.footprint_rectangle((4,4))))
     
     count, bins, hperc = hist_perc(imt1sk, imt1sk>0, 40)
     thhi = bins[np.argmax((count<np.mean(count))*(bins>bins[np.argmax(count)]))-1]
