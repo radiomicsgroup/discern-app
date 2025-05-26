@@ -1,6 +1,6 @@
 # DISCERN: Diagnosis In Susceptibility Contrast Enhancing Regions for Neuroncology
 
-This is the code repository of the brain tumour classification pipeline described in the work [*An accessible deep learning tool for voxel-wise classification of brain malignancies from perfusion MRI*](https://doi.org/10.21203/rs.3.rs-2362207/v1) (preprint) by Raquel Perez-Lopez and colleagues from the Vall d'Hebron Institute of Oncology (VHIO), Barcelona, Spain.
+This is the code repository of the brain tumour classification pipeline described in the work [*An accessible deep learning tool for voxel-wise classification of brain malignancies from perfusion MRI*](https://doi.org/10.1016/j.xcrm.2024.101464) (preprint) by Raquel Perez-Lopez and colleagues from the Vall d'Hebron Institute of Oncology (VHIO), Barcelona, Spain.
 
 **Contact us and try it [HERE!](https://radiomics.vhio.net/discern-app)**
 
@@ -12,7 +12,7 @@ To know more about our group, visit us at [https://radiomicsgroup.github.io](htt
 
 ## Requirements
 ### Python
-- Python 3.8
+- Python 3.11
 - Python packages listed in `requirements.txt`
 - Optionally, to handle compressed DICOMs: pydicom (2.1.2 tested), gdcm (2.8.9 tested)
 
@@ -39,7 +39,7 @@ Download or clone this repository as follows, and navigate into the new folder /
 
 You may create a new Python environment, we will use anaconda/miniconda:
 
-`conda create --name myenv python=3.8`
+`conda create --name myenv python=3.11`
 
 `conda activate myenv`
 
@@ -72,8 +72,8 @@ Segmentation mask files can be provided instead of the T1 volume.
 See all the options in the docstring help with `python run.py --help`.
 
 ## Referencing
-- Preprint:
->Raquel Perez-Lopez et al., [*An accessible deep learning tool for voxel-wise classification of brain malignancies from perfusion MRI*](https://doi.org/10.21203/rs.3.rs-2362207/v1), DOI: 10.21203/rs.3.rs-2362207/v1
+- Paper:
+>Raquel Perez-Lopez et al., [*An accessible deep learning tool for voxel-wise classification of brain malignancies from perfusion MRI*](https://doi.org/10.1016/j.xcrm.2024.101464), DOI: 10.1016/j.xcrm.2024.101464
 - Github:
 >[github.com/radiomicsgroup/discern-app](https://github.com/radiomicsgroup/discern-app)
 
