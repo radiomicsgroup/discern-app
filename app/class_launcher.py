@@ -14,7 +14,7 @@ logger = logging.getLogger(__name__)
 
 def call_model(data, p_model, p_scaling):
     from sklearn.preprocessing import StandardScaler
-    from tensorflow.keras.models import load_model, Model
+    from keras.models import load_model
     from pickle import load
 
     model = load_model(p_model, compile=False)
