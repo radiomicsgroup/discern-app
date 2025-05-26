@@ -30,14 +30,13 @@ from app.inout.inout import dsc_multivolume, print_im_figure
 from app.inout import dicom_convert
 from app import utils, class_launcher
 import settings
-import tensorflow as tf
 import argparse
 import time
 import logging
 import os
-os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'
+# os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'
 
-APPVERSION = '1.0.7'
+APPVERSION = '1.0.8'
 
 
 def main(p_dsc, p_t1, p_output, p_model1, p_model2, threshold_lym, threshold_met, p_lesion0, p_wm0, rerunMask, noReg, noMoCo, noStrip, logfile=None):
@@ -202,7 +201,7 @@ if __name__ == "__main__":
 
     logging.getLogger('matplotlib.font_manager').disabled = True
     logging.getLogger('matplotlib.colorbar').disabled = True
-    tf.get_logger().setLevel('ERROR')
+    logging.getLogger('tensorflow').setLevel(logging.WARNING)
 
     logger.debug('Parsing arguments')
     parser = argparse.ArgumentParser(prog='DSC processing and tumor classification',

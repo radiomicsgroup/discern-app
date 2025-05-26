@@ -14,10 +14,10 @@ logger = logging.getLogger(__name__)
 
 def call_model(data, p_model, p_scaling):
     from sklearn.preprocessing import StandardScaler
-    from tensorflow.keras.models import load_model, Model
+    from keras.models import load_model
     from pickle import load
 
-    model = load_model(p_model, compile=False)
+    model = load_model(p_model, compile=False) # may need to use keras.layers.TFSMLayer("f"{filepath}, call_endpoint='serving_default')
     with open(p_scaling, 'rb') as f:
         scaler = load(f)
     datasc = scaler.transform(data)

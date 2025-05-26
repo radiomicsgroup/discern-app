@@ -22,7 +22,7 @@ def sk_strip_perf(imp,noStrip):
     else:
         se2 = np.zeros((9,9,9))
         se2[:,:,4] = 1
-        se = morphology.cube(5)
+        se = morphology.footprint_rectangle((5,5,5))
         mask_per = morphology.binary_erosion(maskp, se)
         p_size = sum(sum(sum(mask_per)))
         mask_pcl = morphology.remove_small_objects(mask_per,p_size/2,1)
@@ -45,7 +45,7 @@ def get_dsc_snaps(im_perf,h_perf):
     h_frame = {
         'space': 'left-posterior-superior',
         'kinds': ['domain', 'domain', 'domain'],
-        'space directions': h_perf['space directions'][1:,:],
+        'space directions': h_perf['space directions'][1:],
         'space origin': h_perf['space origin']
         }
     return im_perf[0,:,:,:], im_perf[ttp,:,:,:], h_frame

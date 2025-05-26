@@ -62,7 +62,7 @@ def correct_even_odd(imt1):
 def sk_strip_T1(imt1):
     se2 = np.zeros((9,9,9))
     se2[:,:,4] = 1
-    se = morphology.cube(5)
+    se = morphology.footprint_rectangle((5,5,5))
     th_fore = filters.threshold_li(imt1)
     
     hist_all = np.histogram(imt1,20, density=False)
